@@ -22,5 +22,5 @@ zone3: us-east-1c
 state: present
 
 #Bastion Vars
-bastion_ami: ami-0aa7d40eeae50c9a9
-MYIP: 2a00:23c4:526d:d601:bc19:daf4:50be:9c4 ansible_connection=local
+bastion_ami: ami-0aa7d40eeae50c9a
+MYIP: 0.0.0.0/0
