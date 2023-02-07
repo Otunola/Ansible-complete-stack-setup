@@ -193,7 +193,7 @@
           security_group_ids: "{{ vproELBSG_out.group_id }}"
           subnets:
             - "{{ pubsub1id }}"
-            - "{{ pubsu2id }}"
+            - "{{ pubsub2id }}"
             - "{{ pubsub3id }}"
           listeners:
             - protocol: http
