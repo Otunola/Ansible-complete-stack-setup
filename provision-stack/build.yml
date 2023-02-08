@@ -1,14 +1,13 @@
 - name: Generate artifact, copy artifact & sql file to files directory 
   hosts: localhost 
   connection: local 
-  become: yes 
   tasks:
     - name: Install jdk, maven, git 
       apt:
         name: "{{item}}" 
         state: present 
         update_cache: yes
-      Loop:
+      with_items:
         - git
         - openjdk-8-jdk
         - maven
@@ -32,14 +31,6 @@
         src: "{{item}}" 
         dest: files/ROOT.war
       with_fileglob: Vprofile-repo/target/*.war
-
-
-    - name: Copy artifacts to files directory.
-      copy:
-        src: "{{item}}"
-        dest: files/ROOT.war
-      with_fileglob: Vprofile-repo/target/*.war
-
 
     - name: Copy SQL file to files directory
       copy:
